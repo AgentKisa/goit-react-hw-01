@@ -1,0 +1,26 @@
+.table-container {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 10px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-container thead th {
+  background-color: #1e1d1de1;
+  color: #fff;
+  padding: 9px;
+  text-align: center;
+  border: 1px solid black;
+}
+
+.table-container tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+  color: black;
+}
+
+.table-container td {
+  padding: 6px;
+  border: 1px solid black;
+  text-align: center;
+}
