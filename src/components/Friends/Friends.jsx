@@ -1,24 +1,24 @@
 import React from "react";
 import clsx from "clsx";
 import s from "./Friends.module.css";
+import FriendListItem from "./FriendListItem/FriendListItem";
 
 function Friends({ friends }) {
   return (
-    <div className={s.friendsContainer}>
-      {friends.map((friend) => {
+    <ul className={s.friendsContainer}>
+      {friends.map(({ avatar, name, isOnline, id }) => {
         return (
-          <div key={friend.id} className={s.friendCard}>
-            <img src={friend.avatar} alt="Avatar" className={s.avatar} />
-            <p className={s.name}>{friend.name}</p>
-            <p
-              className={clsx(s.status, friend.isOnline ? s.online : s.offline)}
-            >
-              {friend.isOnline ? "Online" : "Offline"}
-            </p>
-          </div>
+          <li className={s.friendListItem} key={id}>
+            <FriendListItem
+              avatar={avatar}
+              name={name}
+              isOnline={isOnline}
+              id={id}
+            />
+          </li>
         );
       })}
-    </div>
+    </ul>
   );
 }
 
